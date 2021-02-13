@@ -2,3 +2,6 @@
 [![Build Status](https://travis-ci.com/TheBozzz34/OnlyJared.svg?branch=main)](https://travis-ci.com/TheBozzz34/OnlyJared)
 
 # OnlyJared
+
+## Welcome to the best and totaly not poorly made github there is 
+## Are you prepared for the time of your life
