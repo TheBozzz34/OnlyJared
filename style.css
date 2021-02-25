@@ -1,4 +1,3 @@
 body {
-  background: #000000 url("backround.png") no-repeat left top;
-  background-size: cover;
+  background-image: url("backround.png");
 }
