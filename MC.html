@@ -6,6 +6,27 @@
   <title>WOTT Server | Home</title>
   <script async src="https://arc.io/widget.min.js#wVJ6dUFv"></script>
   
+ <script>
+   
+  //based on a pen by @robinselmer
+var url = "https://api.minetools.eu/ping/75.161.238.72/25565";
+ 
+$.getJSON(url, function(r) {
+    //data is the JSON string
+ if(r.error){
+    $('#rest').html('Server Offline');
+   return false;
+ } 
+var pl = '';
+ if(r.players.sample.length > 0 ){ pl = '<br>OP: '+r.players.sample[0].name;  } 
+  $('#rest').html(r.description.replace(/§(.+?)/gi, '')+'<br><b>Players Online:</b> '+r.players.online+pl);
+ $('#favicon').attr('src', r.favicon);
+    
+});
+
+   
+ </script>
+  
 </head>
 
 <style>
@@ -114,7 +135,96 @@ img.background {
     35%, 84%, 90%, 94%, 98%      {text-shadow: 1px 1px rgb(25, 25, 100);}
 }
 
-  
+ body,html{
+  background:url(https://i.imgur.com/iCZSjWa.png) center no-repeat;
+  background-size:cover;
+  min-height:100%;
+  font-family: 'Roboto Mono',  monospace;
+  font-size:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+body:before{
+  content:""; width:100%; height:100%; background:rgba(0,0,0,0.8);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10
+}
+h1,h2{
+  font-weight:400;
+  letter-spacing:-2px
+}
+.card {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 200px;
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
+  -webkit-animation: fadein 2s;
+          animation: fadein 2s;
+  overflow:hidden;
+  z-index: 999;
+}
+
+.header {
+  position: relative;
+  z-index:1;
+  width: 100%;
+  height: 180px;
+  box-shadow:0 4px 3px #0002;
+  overflow: hidden;
+}
+.card img{
+  width:100%;
+  transition: all 1s ease;
+  z-index:0
+}
+.image {
+  width: 100%;
+  height: 180px;
+  cursor:crosshair;
+  overflow:hidden;
+}
+
+.image:hover img{
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.header h2{
+  position:absolute;
+  bottom:0;
+  margin:0;
+  width:100%;
+  padding:0 10px;
+  color:#fff;
+  text-transform:uppercase;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+}
+.icon {
+  position: absolute;
+  background:#fff;
+  right: 10px;
+  top: 135px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow:hidden;
+  border:3px solid #fff;
+  box-shadow:0 4px 3px #0002;
+  z-index:9
+}
+#rest{
+  padding:30px 15px;
+  line-height:30px;
+  color:#000d42
+}
   
   
 </style>
@@ -126,6 +236,14 @@ img.background {
   <h1>Wrath of the TeletubbiesMC</h1>
   <a style="font-size:150%;opacity:0">-</a><a id="changeText" style="font-size:120%;">IP: 75.161.238.72</a>
   <p style="margin:20px;">Wrath of The Teletubbies is a vanilla MineCraft Server with a friendly community and atmosphere about it. Sporting a relatively smaller-than-average playerbase, you will find many great places to build and set up your base or home. We have great staff members who are always who are kind and happy to help. All in all WOTT is an extremely welcoming server for players of all types!</p>
+  <div class="card"> <div class="icon"><img src="https://pbs.twimg.com/profile_images/808180587605331969/u-CULTwl_400x400.jpg" id="favicon"></div><div class="header">
+  <div class="image"> <img src="https://pbs.twimg.com/media/C2bx8KGWQAEORsE.jpg" alt="" /> </div>
+ 
+  <h2>WOTT</h2>
+  </div>
+  <div id="rest">Loading ...</div>
+</div>
+
   <p>Join our discord<br><a href="https://discord.gg/DJBBkWx" target="_blank">https://discord.gg/XmtGReAXwp</a></p>
   <iframe src="https://discord.com/widget?id=771017297816846387&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
