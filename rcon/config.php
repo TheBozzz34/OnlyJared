@@ -1,5 +1,5 @@
 <?php
-$rconHost = "localhost";
-$rconPort = 25575;
-$rconPassword = "xtMJsVtmx0XypuId7jIb";
+$rconHost = "thebozzz.ddns.net";
+$rconPort = 39999;
+$rconPassword = "12fsdaf5s4f5asdf3456";
 ?>
