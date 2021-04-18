@@ -39,7 +39,48 @@
     });
 </script>
 </head>
+<style>
+	input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
 
+input[type=fnm], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
 <!-- Header content -->
 <header>
@@ -115,20 +156,27 @@
     <div class="externalResources"><a href="https://github.com/TheBozzz34/OnlyJared/" title="Github Link">GITHUB</a> </div>
   </aside>
 </section>
-<form action="https://send.pageclip.co/eTEkgO79rMHJonUcv4HGqLLSsuBK3BMy/Contact-Me" class="pageclip-form" method="post">
-  <p>Contact Me</p>
-  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
+<div>
+  <form action="https://send.pageclip.co/eTEkgO79rMHJonUcv4HGqLLSsuBK3BMy/contact" class="pageclip-form" method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-  <!-- It looks like you are creating a contact form. These email and subject fields are special -->
-  <!-- See https://pageclip.co/docs#special-fields for more info -->
-  <input type="email" name="email" value="roscoe@example.com" />
-  <input type="text" name="subject" value="A contact subject" />
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    
+    <label for="cname">Last Name</label>
+    <input type="fnm" id="cname" name="lastname" placeholder="Your message..">
 
-  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-  <button type="submit" class="pageclip-form__submit">
-    <span>Send</span>
-  </button>
-</form>
+    <label for="country">Reason</label>
+    <select id="country" name="country">
+      <option value="australia">Site Problem</option>
+      <option value="canada">Contact Me</option>
+      <option value="usa">Other</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
 <footer>
   <hr>
   <p class="footerDisclaimer">2020  Copyrights - <span>All Rights Reserved</span></p>
