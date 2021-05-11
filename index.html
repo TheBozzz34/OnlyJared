@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-	<!-- Start of Async Drift Code -->
+<!---
+	 Start of Async Drift Code 
 <script>
 "use strict";
 
@@ -28,7 +29,21 @@
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('mr7sc2rx9zt3');
 </script>
-<!-- End of Async Drift Code -->
+
+	--->
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "50ed06d6-82be-45e5-8e17-07157f8d9314", // The ID of this integration.
+      region: "us-south", // The region your integration is hosted in.
+      serviceInstanceID: "be8eaab2-fcd7-4e97-b79f-e079bd82492a", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
 <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 <script src="https://discordbotlist.com/widget/index.js" async></script>
 <meta charset="utf-8">
