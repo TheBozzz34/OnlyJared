@@ -1,21 +1,208 @@
 <!DOCTYPE html>
 <html>
 <style>
-  .center {
-  display: block;
-  margin-left: auto;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 60vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.button {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid #f7f7f7;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+  &:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: #f7f7f7;
+  }
+  &:nth-of-type(2):after {
+    left: 0;
+  }
+  &:nth-of-type(3):after {
+    right: 0;
+    left: auto;
+  }
+  &:nth-of-type(4):after {
+    left: 0;
+    bottom: auto;
+    top: -3px;
+    width: 100%;
+  }
+  &:nth-of-type(5):after {
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+  }
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:nth-of-type(4):after {
+      top: calc(100% - 3px);
+    }
+    &:nth-of-type(5) {
+      color: #5bcaff;
+    }
+    &:nth-of-type(5):after {
+      left: -10%;
+      width: 120%;
+    }
+    // &:nth-of-type(6) {
+    //   flex-grow:3;
+    // }
+    // &:nth-of-type(6):after {
+    //   width: 0%;
+    // }
+    &:nth-of-type(6) {
+      border-radius: 30px;
+    }
+    &:nth-of-type(6):after {
+      width: 0%;
+    }
+    &:nth-of-type(7) {
+      transform: scale(1.2);
+    }
+    &:nth-of-type(7):after {
+      width: 0%;
+    }
+    &:nth-of-type(8) {
+      box-shadow: inset 0px 0px 0px 3px #f7f7f7;
+    }
+    &:nth-of-type(8):after {
+      width: 0%;
+    }
+    &:nth-of-type(9) {
+      box-shadow: 0px 0px 0px 3px #f7f7f7;
+    }
+    &:nth-of-type(9):after {
+      width: 0%;
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  font-family: Avenir, sans-serif;
+  font-size: 112.5%;
+  color: #124;
+  background-image: radial-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 40vw), radial-gradient(rgba(0, 128, 0, 0.3), rgba(0, 128, 0, 0) 40vw), radial-gradient(rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 40vw), radial-gradient(rgba(255, 255, 0, 0.3), rgba(255, 255, 0, 0) 40vw), radial-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 40vw);
+  background-position: -40vw 14rem, 50% 10rem, 60vw 14rem, -10vw calc(14rem + 20vw), 30vw calc(14rem + 20vw);
+  background-size: 80vw 80vw;
+  background-repeat: no-repeat;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1.5rem 1rem;
+  background-color: white;
+  border-top: 4px solid #c080c0;
+}
+
+header {
+  max-width: 600px;
+  margin: 24vh auto;
+}
+	
+footer {
+  text-align: center;
+  margin: 24vh auto;
+}
+.typeform-widget {
+	text-align: center;
+}
+	
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+h1 + p {
+  margin-top: 1rem;
+}
+
+main {
+  max-width: 800px;
   margin-right: auto;
-  width: 50%;
+  margin-left: auto;
 }
-  
-  body {
- background-image: url("https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-can-you-feel-the-love-tonight.png");
- background-color: #cccccc;
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: -1rem;
+  list-style: none;
 }
-  
+@media (min-width: 600px) {
+  .cards {
+    flex-direction: row;
+  }
+}
+
+.card {
+  flex: 1;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 6rem rgba(0, 0, 0, 0.1);
+}
+.card * {
+  margin-bottom: 1rem;
+}
+
+.card--image {
+  font-size: 6rem;
+  line-height: 1;
+}
+.card.-red .card--image {
+  color: #ff8080;
+}
+.card.-green .card--image {
+  color: #80c080;
+}
+.card.-blue .card--image {
+  color: #8080ff;
+}
+.card.-oob .card--image {
+  color: #fed8b1;
+}
+
+
+
 </style>  
   
   <body>
-    <img src="https://cdn.iconscout.com/icon/free/png-128/github-1521500-1288242.png" alt="Paris" class="center">
+    <img src="https://cdn.iconscout.com/icon/free/png-128/github-1521500-1288242.png" alt="github" class="center">
   </body>  
 </html>  
